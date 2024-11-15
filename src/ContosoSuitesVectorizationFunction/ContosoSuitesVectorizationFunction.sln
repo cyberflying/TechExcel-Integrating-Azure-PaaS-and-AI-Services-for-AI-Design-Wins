@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoSuitesVectorizationFunction", "ContosoSuitesVectorizationFunction.csproj", "{05577A47-A9DA-4B14-9374-833925E8310A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "obj", "obj", "{72DF1EB6-599C-4159-8F2A-D3029B7531CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{A19FB2AF-0486-4B5F-B080-3A2CD2620F9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net8.0", "net8.0", "{56A2334D-F427-4C96-B297-B035117FED6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerExtensions", "obj\Debug\net8.0\WorkerExtensions\WorkerExtensions.csproj", "{9F0530E7-E961-4F42-94D1-B931377D29F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05577A47-A9DA-4B14-9374-833925E8310A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05577A47-A9DA-4B14-9374-833925E8310A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05577A47-A9DA-4B14-9374-833925E8310A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05577A47-A9DA-4B14-9374-833925E8310A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0530E7-E961-4F42-94D1-B931377D29F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0530E7-E961-4F42-94D1-B931377D29F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0530E7-E961-4F42-94D1-B931377D29F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0530E7-E961-4F42-94D1-B931377D29F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A19FB2AF-0486-4B5F-B080-3A2CD2620F9E} = {72DF1EB6-599C-4159-8F2A-D3029B7531CA}
+		{56A2334D-F427-4C96-B297-B035117FED6C} = {A19FB2AF-0486-4B5F-B080-3A2CD2620F9E}
+		{9F0530E7-E961-4F42-94D1-B931377D29F1} = {56A2334D-F427-4C96-B297-B035117FED6C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D60E8D1-2340-4DAE-9A13-1DE0D1B8AB42}
+	EndGlobalSection
+EndGlobal
