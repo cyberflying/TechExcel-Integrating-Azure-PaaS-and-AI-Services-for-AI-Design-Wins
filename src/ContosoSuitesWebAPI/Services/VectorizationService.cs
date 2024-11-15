@@ -47,9 +47,17 @@ namespace ContosoSuitesWebAPI.Services
            var db = _cosmosClient.GetDatabase(configuration.GetValue<string>("CosmosDB:DatabaseName") ?? "ContosoSuites");
            var container = db.GetContainer(configuration.GetValue<string>("CosmosDB:MaintenanceRequestsContainerName") ?? "MaintenanceRequests");
 
+<<<<<<< HEAD
            var query = $"SELECT c.hotel_id AS HotelId, c.hotel AS Hotel, c.details AS Details, c.source AS Source, VectorDistance(c.request_vector, [{string.Join(",", queryVector)}]) AS SimilarityScore FROM c";
            query += $" WHERE VectorDistance(c.request_vector, [{string.Join(",", queryVector)}]) > {minimum_similarity_score}";
            query += $" ORDER BY VectorDistance(c.request_vector, [{string.Join(",", queryVector)}])";
+=======
+        //    var vectorString = string.Join(", ", queryVector.Select(v => v.ToString(CultureInfo.InvariantCulture)).ToArray());
+
+        //    var query = $"SELECT c.hotel_id AS HotelId, c.hotel AS Hotel, c.details AS Details, c.source AS Source, VectorDistance(c.request_vector, [{vectorString}]) AS SimilarityScore FROM c";
+        //    query += $" WHERE VectorDistance(c.request_vector, [{vectorString}]) > {minimum_similarity_score.ToString(CultureInfo.InvariantCulture)}";
+        //    query += $" ORDER BY VectorDistance(c.request_vector, [{vectorString}])";
+>>>>>>> 084c190679174a63913a2fd83d9a98b0c33d39d0
 
            var results = new List<VectorSearchResult>();
 
