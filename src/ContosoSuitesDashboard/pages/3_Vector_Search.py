@@ -1,6 +1,6 @@
 import requests
 import streamlit as st
-import openai
+# import openai
 
 st.set_page_config(layout="wide")
 
@@ -17,24 +17,24 @@ def handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0
     response = requests.post(f"{api_endpoint}/VectorSearch", data=query_vector, params={"max_results": max_results, "minimum_similarity_score": minimum_similarity_score}, headers=headers, timeout=10, verify=False)
     return response
 
-def make_azure_openai_embedding_request(text):
-    """Create and return a new embedding request. Key assumptions:
-    - Azure OpenAI endpoint, key, and deployment name stored in Streamlit secrets."""
+# def make_azure_openai_embedding_request(text):
+#     """Create and return a new embedding request. Key assumptions:
+#     - Azure OpenAI endpoint, key, and deployment name stored in Streamlit secrets."""
 
-    aoai_endpoint = st.secrets["aoai"]["endpoint"]
-    aoai_key = st.secrets["aoai"]["key"]
-    aoai_embedding_deployment_name = st.secrets["aoai"]["embedding_deployment_name"]
+#     aoai_endpoint = st.secrets["aoai"]["endpoint"]
+#     aoai_key = st.secrets["aoai"]["key"]
+#     aoai_embedding_deployment_name = st.secrets["aoai"]["embedding_deployment_name"]
 
-    client = openai.AzureOpenAI(
-        api_key=aoai_key,
-        api_version="2024-06-01",
-        azure_endpoint = aoai_endpoint
-    )
-    # Create and return a new embedding request
-    return client.embeddings.create(
-        model=aoai_embedding_deployment_name,
-        input=text
-    )
+#     client = openai.AzureOpenAI(
+#         api_key=aoai_key,
+#         api_version="2024-06-01",
+#         azure_endpoint = aoai_endpoint
+#     )
+#     # Create and return a new embedding request
+#     return client.embeddings.create(
+#         model=aoai_embedding_deployment_name,
+#         input=text
+#     )
 
 def main():
     """Main function for the Vector Search over Maintenance Requests Streamlit page."""
@@ -69,9 +69,9 @@ def main():
             if query:
                 # Vectorize the query text.
                 # Exercise 3 Task 3 TODO #4: Get the vectorized query text by calling handle_query_vectorization.
-                # query_vector = handle_query_vectorization(query)
-                embedding = make_azure_openai_embedding_request(query).data[0].embedding
-                query_vector = str(embedding)
+                query_vector = handle_query_vectorization(query)
+                # embedding = make_azure_openai_embedding_request(query).data[0].embedding
+                # query_vector = str(embedding)
                 
                 # Perform the vector search.
                 # Exercise 3 Task 3 TODO #5: Get the vector search results by calling handle_vector_search.
